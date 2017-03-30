@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -27,6 +28,9 @@ public class Anuncio implements Serializable {
     private String duracion;
     private String preferencia;
 
+    @ManyToOne
+    private Evento evento;
+    
     public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
