@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -24,6 +25,9 @@ public class Valoracion implements Serializable {
     private Integer id;
     private String comentario;
     private Float puntuacion;
+    
+    @ManyToOne
+    private Usuario usuario;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;

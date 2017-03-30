@@ -6,10 +6,13 @@
 package com.uma.diariosur;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -28,6 +31,9 @@ public class Usuario implements Serializable {
     private String fecha_nacimiento;
     private String contraseña;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Valoracion> valoraciones;
+    
     public void setNick(Integer nick) {
         this.nick = nick;
     }
