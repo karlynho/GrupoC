@@ -32,6 +32,9 @@ public class Formulario implements Serializable {
     @ManyToOne
     private Usuario usuario;
 
+    
+    
+    
     public String getEstado() {
         return estado;
     }

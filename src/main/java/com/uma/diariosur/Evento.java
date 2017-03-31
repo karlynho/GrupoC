@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -45,6 +46,8 @@ public class Evento implements Serializable {
     private List<Valoracion> valoraciones;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
     private List<Anuncio> anuncios;
+    @ManyToOne
+    Periodista periodista;
     
   
     public static long getSerialVersionUID() {
