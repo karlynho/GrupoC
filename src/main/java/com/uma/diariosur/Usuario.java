@@ -38,10 +38,10 @@ public class Usuario implements Serializable {
     private String fecha_nacimiento;
     private String contraseña;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Usuario")
     private List<Valoracion> valoraciones;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Usuario")
     private List<Formulario> formulario;
     
     //Al igual que en usuario esta atributo no debe estar porque no hay relacion

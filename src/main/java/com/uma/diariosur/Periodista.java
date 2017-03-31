@@ -44,6 +44,9 @@ public class Periodista implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
     private List<Evento> eventos;
     
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
+    private List<Formulario> formulario;
+    
   
     public Integer getId() {
         return id;

@@ -31,6 +31,9 @@ public class Formulario implements Serializable {
     
     @ManyToOne
     private Usuario usuario;
+    
+    @ManyToOne
+    private Periodista periodista;
 
     
     
