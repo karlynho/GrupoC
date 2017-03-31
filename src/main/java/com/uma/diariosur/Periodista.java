@@ -6,12 +6,14 @@
 package com.uma.diariosur;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+
 
 /**
  *
@@ -25,11 +27,74 @@ public class Periodista implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
-  
+    /*En un principio este atributo ya no es necesario pues no existe la relacion con el usuario
     private Usuario usuario;
-
+    */
+    
+    private String nick;
+    private String nombre;
+    private String apellidos;
+    private String email;
+    private String fecha_nacimiento;
+    private String contraseña;
+    
+    
+    
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
+    private List<Evento> eventos;
+    
+  
     public Integer getId() {
         return id;
+    }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public void setId(Integer id) {

@@ -45,7 +45,8 @@ public class Evento implements Serializable {
     private List<Valoracion> valoraciones;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
     private List<Anuncio> anuncios;
-
+    
+  
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }

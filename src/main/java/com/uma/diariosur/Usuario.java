@@ -25,6 +25,9 @@ public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    
+    //Generated Value genera un valor para el nick de forma aleatoria, lo mejor seria que lo
+    //creara el usuario y no que se creara solo
     @GeneratedValue(strategy = GenerationType.AUTO)
     
     
@@ -41,8 +44,8 @@ public class Usuario implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
     private List<Formulario> formulario;
     
-    
-    private Periodista periodista;
+    //Al igual que en usuario esta atributo no debe estar porque no hay relacion
+    //private Periodista periodista;
     
     public void setNick(String nick) {
         this.nick = nick;
