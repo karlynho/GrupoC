@@ -26,6 +26,9 @@ public class Megusta implements Serializable {
     
     @ManyToOne
     private Evento evento;
+    
+    @ManyToOne
+    private Usuario usuario;
 
     public Integer getId() {
         return id;

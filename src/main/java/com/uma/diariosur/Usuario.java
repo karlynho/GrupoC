@@ -44,6 +44,9 @@ public class Usuario implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Usuario")
     private List<Formulario> formulario;
     
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Usuario")
+    private List<Megusta> megusta;
+    
     //Al igual que en usuario esta atributo no debe estar porque no hay relacion
     //private Periodista periodista;
     
