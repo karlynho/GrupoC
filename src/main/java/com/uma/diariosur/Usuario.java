@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -33,6 +34,12 @@ public class Usuario implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
     private List<Valoracion> valoraciones;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Formulario> formulario;
+    
+    @ManyToOne
+    private Periodista periodista;
     
     public void setNick(Integer nick) {
         this.nick = nick;
