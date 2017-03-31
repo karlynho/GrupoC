@@ -49,6 +49,8 @@ public class Evento implements Serializable {
     @ManyToOne
     Periodista periodista;
     
+    @OneToOne(optional = true)
+    private Video video;
   
     public static long getSerialVersionUID() {
         return serialVersionUID;

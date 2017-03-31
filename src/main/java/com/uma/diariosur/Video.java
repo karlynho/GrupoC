@@ -24,6 +24,9 @@ public class Video implements Serializable {
     private Integer id;
     private String tipo;
     private String duracion;
+    
+    @OneToOne(optional = false)
+    private Evento evento;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
