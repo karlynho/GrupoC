@@ -41,7 +41,7 @@ public class Usuario implements Serializable {
     @ManyToOne
     private Periodista periodista;
     
-    public void setNick(Integer nick) {
+    public void setNick(String nick) {
         this.nick = nick;
     }
 
