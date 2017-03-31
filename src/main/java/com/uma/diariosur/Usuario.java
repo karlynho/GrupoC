@@ -25,7 +25,7 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer nick;
+    private String nick;
     private String nombre;
     private String apellidos;
     private String email;
