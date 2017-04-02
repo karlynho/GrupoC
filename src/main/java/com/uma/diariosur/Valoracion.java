@@ -28,7 +28,9 @@ public class Valoracion implements Serializable {
     
     @ManyToOne
     private Usuario usuario;
-
+    @ManyToOne
+    private Evento evento;
+    
     public Usuario getUsuario() {
         return usuario;
     }

@@ -35,6 +35,9 @@ public class Periodista implements Serializable {
     private String email;
     private String fecha_nacimiento;
     private String contraseña;
+    private String ambito;
+
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
     private List<Evento> eventos;
     
@@ -74,6 +77,14 @@ public class Periodista implements Serializable {
         return email;
     }
 
+    public String getAmbito() {
+        return ambito;
+    }
+
+    public void setAmbito(String ambito) {
+        this.ambito = ambito;
+    }
+    
     public void setEmail(String email) {
         this.email = email;
     }

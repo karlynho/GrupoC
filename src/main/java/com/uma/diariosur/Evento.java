@@ -54,8 +54,15 @@ public class Evento implements Serializable {
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
     private List<Imagen> imagenes;
+
+    public List<Imagen> getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(List<Imagen> imagenes) {
+        this.imagenes = imagenes;
+    }
     
-  
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
