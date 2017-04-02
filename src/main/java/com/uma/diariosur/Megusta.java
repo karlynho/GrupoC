@@ -37,6 +37,22 @@ public class Megusta implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
+    
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     @Override
     public int hashCode() {

@@ -36,8 +36,6 @@ public class Imagen implements Serializable {
         return tipo;
     }
     
-    
-
     public Integer getId() {
         return id;
     }

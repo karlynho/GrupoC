@@ -116,9 +116,47 @@ public class Evento implements Serializable {
     public String getUbicacion() {
         return ubicacion;
     }
-    
-    
 
+    public List<Megusta> getMeGusta() {
+        return meGusta;
+    }
+
+    public void setMeGusta(List<Megusta> meGusta) {
+        this.meGusta = meGusta;
+    }
+
+    public List<Valoracion> getValoraciones() {
+        return valoraciones;
+    }
+
+    public void setValoraciones(List<Valoracion> valoraciones) {
+        this.valoraciones = valoraciones;
+    }
+
+    public List<Anuncio> getAnuncios() {
+        return anuncios;
+    }
+
+    public void setAnuncios(List<Anuncio> anuncios) {
+        this.anuncios = anuncios;
+    }
+
+    public Periodista getPeriodista() {
+        return periodista;
+    }
+
+    public void setPeriodista(Periodista periodista) {
+        this.periodista = periodista;
+    }
+
+    public Video getVideo() {
+        return video;
+    }
+
+    public void setVideo(Video video) {
+        this.video = video;
+    }
+    
     public Integer getId() {
         return id;
     }

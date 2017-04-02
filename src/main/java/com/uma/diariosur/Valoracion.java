@@ -29,11 +29,10 @@ public class Valoracion implements Serializable {
     @ManyToOne
     private Usuario usuario;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    
     public String getComentario() {
         return comentario;
     }
@@ -50,7 +49,9 @@ public class Valoracion implements Serializable {
         this.puntuacion = Puntuacion;
     }
     
-    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public Integer getId() {
         return id;

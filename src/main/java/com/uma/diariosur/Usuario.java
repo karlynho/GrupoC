@@ -74,10 +74,6 @@ public class Usuario implements Serializable {
         this.contraseña = contraseña;
     }
 
-    
-    
-    
-    
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }

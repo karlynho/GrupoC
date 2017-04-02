@@ -29,8 +29,12 @@ public class Video implements Serializable {
     @OneToOne(optional = false)
     private Evento evento;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
     }
 
     public String getTipo() {

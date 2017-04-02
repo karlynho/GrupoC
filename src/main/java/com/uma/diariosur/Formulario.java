@@ -28,15 +28,35 @@ public class Formulario implements Serializable {
     private String estado;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fecha_subida;
-    
+    private String nombre;
+    private String descripcion;
+    private String categoria;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date fecha_inicio;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date fecha_fin;
+
     @ManyToOne
     private Usuario usuario;
     
     @ManyToOne
     private Periodista periodista;
+    
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-    
-    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Periodista getPeriodista() {
+        return periodista;
+    }
+
+    public void setPeriodista(Periodista periodista) {
+        this.periodista = periodista;
+    }
     
     public String getEstado() {
         return estado;
@@ -93,14 +113,7 @@ public class Formulario implements Serializable {
     public void setFecha_fin(Date fecha_fin) {
         this.fecha_fin = fecha_fin;
     }
-    private String nombre;
-    private String descripcion;
-    private String categoria;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fecha_inicio;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fecha_fin;
-
+   
     public Integer getId() {
         return id;
     }

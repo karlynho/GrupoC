@@ -37,14 +37,10 @@ public class Periodista implements Serializable {
     private String email;
     private String fecha_nacimiento;
     private String contraseña;
-    
-    
-    
-    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
     private List<Evento> eventos;
     
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
     private List<Formulario> formulario;
     
   
@@ -104,6 +100,22 @@ public class Periodista implements Serializable {
         this.id = id;
     }
 
+    public List<Evento> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
+    }
+
+    public List<Formulario> getFormulario() {
+        return formulario;
+    }
+
+    public void setFormulario(List<Formulario> formulario) {
+        this.formulario = formulario;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
