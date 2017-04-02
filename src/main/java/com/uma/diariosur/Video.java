@@ -29,6 +29,10 @@ public class Video implements Serializable {
     @OneToOne(optional = false)
     private Evento evento;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     public Evento getEvento() {
         return evento;
     }
@@ -53,8 +57,6 @@ public class Video implements Serializable {
         this.duracion = duracion;
     }
     
-    
-
     public Integer getId() {
         return id;
     }

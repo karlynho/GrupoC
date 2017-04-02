@@ -24,12 +24,7 @@ public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    
-    //Generated Value genera un valor para el nick de forma aleatoria, lo mejor seria que lo
-    //creara el usuario y no que se creara solo
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
-    
     private String nick;
     private String nombre;
     private String apellidos;
@@ -45,9 +40,30 @@ public class Usuario implements Serializable {
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Usuario")
     private List<Megusta> megusta;
-    
-    //Al igual que en usuario esta atributo no debe estar porque no hay relacion
-    //private Periodista periodista;
+
+    public List<Valoracion> getValoraciones() {
+        return valoraciones;
+    }
+
+    public void setValoraciones(List<Valoracion> valoraciones) {
+        this.valoraciones = valoraciones;
+    }
+
+    public List<Formulario> getFormulario() {
+        return formulario;
+    }
+
+    public void setFormulario(List<Formulario> formulario) {
+        this.formulario = formulario;
+    }
+
+    public List<Megusta> getMegusta() {
+        return megusta;
+    }
+
+    public void setMegusta(List<Megusta> megusta) {
+        this.megusta = megusta;
+    }
     
     public void setNick(String nick) {
         this.nick = nick;
@@ -97,11 +113,6 @@ public class Usuario implements Serializable {
         return contraseña;
     }
     
-    
-    
-
-   
-
     @Override
     public int hashCode() {
         int hash = 0;

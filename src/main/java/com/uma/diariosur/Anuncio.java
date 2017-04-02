@@ -31,6 +31,7 @@ public class Anuncio implements Serializable {
     @ManyToOne
     private Evento evento;
     
+   
     public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
@@ -39,6 +40,13 @@ public class Anuncio implements Serializable {
         this.preferencia = preferencia;
     }
 
+      public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
     
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -53,7 +61,6 @@ public class Anuncio implements Serializable {
     }
     
     
-
     public Integer getId() {
         return id;
     }

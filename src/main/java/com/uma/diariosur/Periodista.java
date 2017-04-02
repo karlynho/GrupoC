@@ -25,11 +25,7 @@ public class Periodista implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    
-   
-    
-    private String nick;
+    private Integer id; 
     private String nombre;
     private String apellidos;
     private String email;
@@ -43,20 +39,15 @@ public class Periodista implements Serializable {
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Periodista")
     private List<Formulario> formulario;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
     
-  
     public Integer getId() {
         return id;
     }
-
-    public String getNick() {
-        return nick;
-    }
-
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
+    
     public String getNombre() {
         return nombre;
     }

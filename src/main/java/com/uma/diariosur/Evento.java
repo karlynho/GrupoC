@@ -42,19 +42,23 @@ public class Evento implements Serializable {
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
     private List<Megusta> meGusta;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
     private List<Valoracion> valoraciones;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
     private List<Anuncio> anuncios;
-    @ManyToOne
-    Periodista periodista;
     
     @OneToOne(optional = true)
     private Video video;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
     private List<Imagen> imagenes;
+    
+    @ManyToOne
+    Periodista periodista;
 
+    
     public List<Imagen> getImagenes() {
         return imagenes;
     }
