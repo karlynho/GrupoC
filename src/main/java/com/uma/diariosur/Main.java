@@ -5,6 +5,8 @@
  */
 package com.uma.diariosur;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
@@ -13,6 +15,11 @@ import javax.persistence.Persistence;
  */
 public class Main {
     public static void main(String[] args) {
-    Persistence.generateSchema("com.uma_DiarioSur_jar_1.0-SNAPSHOTPU", null);
+    
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.uma_DiarioSur_jar_1.0-SNAPSHOTPU");
+        EntityManager em = emf.createEntityManager();
+
+        em.close();
+        emf.close();
   }
 }
