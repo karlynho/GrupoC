@@ -25,19 +25,13 @@ public class Anuncio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String duracion;
-    private String preferencia;
+    private String empresa;
 
     @ManyToOne
     private Evento evento;
-    
-   
-    public void setDuracion(String duracion) {
-        this.duracion = duracion;
-    }
 
-    public void setPreferencia(String preferencia) {
-        this.preferencia = preferencia;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
       public Evento getEvento() {
@@ -52,12 +46,8 @@ public class Anuncio implements Serializable {
         return serialVersionUID;
     }
 
-    public String getDuracion() {
-        return duracion;
-    }
-
-    public String getPreferencia() {
-        return preferencia;
+    public String getEmpresa() {
+        return empresa;
     }
     
     

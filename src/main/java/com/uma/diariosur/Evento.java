@@ -37,7 +37,7 @@ public class Evento implements Serializable {
     private Date fecha_inicio;
     @Temporal(TemporalType.DATE)
     private Date fecha_final;
-    private String precio;
+    private Double precio;
     private String ubicacion;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
@@ -56,7 +56,7 @@ public class Evento implements Serializable {
     private List<Imagen> imagenes;
     
     @ManyToOne
-    Periodista periodista;
+    private Periodista periodista;
 
     
     public List<Imagen> getImagenes() {
@@ -91,7 +91,7 @@ public class Evento implements Serializable {
         this.fecha_final = fecha_final;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
@@ -120,7 +120,7 @@ public class Evento implements Serializable {
     }
 
 
-    public String getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 

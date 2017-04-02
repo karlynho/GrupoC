@@ -24,7 +24,7 @@ public class Video implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String tipo;
-    private String duracion;
+    private Integer duracion;
     
     @OneToOne(optional = false)
     private Evento evento;
@@ -45,7 +45,7 @@ public class Video implements Serializable {
         return tipo;
     }
 
-    public String getDuracion() {
+    public Integer getDuracion() {
         return duracion;
     }
 
@@ -53,7 +53,7 @@ public class Video implements Serializable {
         this.tipo = tipo;
     }
 
-    public void setDuracion(String duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
     

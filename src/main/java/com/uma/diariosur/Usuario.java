@@ -6,6 +6,7 @@
 package com.uma.diariosur;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
 
 
 /**
@@ -29,8 +31,9 @@ public class Usuario implements Serializable {
     private String nombre;
     private String apellidos;
     private String email;
-    private String fecha_nacimiento;
-    private String contraseña;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date fecha_nacimiento;
+    private String password;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Usuario")
     private List<Valoracion> valoraciones;
@@ -81,12 +84,12 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public static long getSerialVersionUID() {
@@ -105,12 +108,12 @@ public class Usuario implements Serializable {
         return email;
     }
 
-    public String getFecha_nacimiento() {
+    public Date getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
     
     @Override
