@@ -37,7 +37,6 @@ public class Evento implements Serializable {
     private Date fecha_inicio;
     @Temporal(TemporalType.DATE)
     private Date fecha_final;
-    private String duracion;
     private String precio;
     private String ubicacion;
     
@@ -52,6 +51,10 @@ public class Evento implements Serializable {
     
     @OneToOne(optional = true)
     private Video video;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
+    private List<Imagen> imagenes;
+    
   
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -105,9 +108,6 @@ public class Evento implements Serializable {
         return fecha_final;
     }
 
-    public String getDuracion() {
-        return duracion;
-    }
 
     public String getPrecio() {
         return precio;

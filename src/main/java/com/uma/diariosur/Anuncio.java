@@ -17,7 +17,7 @@ import javax.persistence.ManyToOne;
  * @author Carmen
  */
 
-//He añadido un comentario para probar gitHub
+
 @Entity
 public class Anuncio implements Serializable {
 

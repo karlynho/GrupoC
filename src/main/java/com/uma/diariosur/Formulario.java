@@ -42,6 +42,9 @@ public class Formulario implements Serializable {
     @ManyToOne
     private Periodista periodista;
     
+     public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
     public Usuario getUsuario() {
         return usuario;
     }

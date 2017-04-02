@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -23,6 +24,9 @@ public class Imagen implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String tipo;
+    
+    @ManyToOne
+    private Evento evento;
 
     public void setTipo(String tipo) {
         this.tipo = tipo;

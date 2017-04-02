@@ -27,9 +27,7 @@ public class Periodista implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
-    /*En un principio este atributo ya no es necesario pues no existe la relacion con el usuario
-    private Usuario usuario;
-    */
+   
     
     private String nick;
     private String nombre;
